@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b2911cc-9ea2-4cf8-9ebe-af7b4533717d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TypeTask/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TypeTask/Task_A/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TypeTask/Task_A/task_A.js" afterDir="false" />
-    </list>
+    <list default="true" id="6b2911cc-9ea2-4cf8-9ebe-af7b4533717d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,8 +62,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600067734988</updated>
-      <workItem from="1600067736539" duration="6823000" />
+      <workItem from="1600067736539" duration="7128000" />
     </task>
+    <task id="LOCAL-00001" summary="add task_A.js">
+      <created>1600100752315</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600100752315</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add task_A.js">
+      <created>1600100759230</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600100759230</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,5 +94,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add task_A.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="add task_A.js" />
   </component>
 </project>
