@@ -62,8 +62,8 @@ function program([n, u]) {
         else
             result[a] = 1;
     }
-    for (var key in result) {
-        console.log('число ' + key + ' == ' + result[key] + ' раз(а)');
-    }
+    // for (var key in result) {
+    //     console.log('число ' + key + ' == ' + result[key] + ' раз(а)');
+    // }
     console.log('result = ', result);
 }
