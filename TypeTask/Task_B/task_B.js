@@ -39,31 +39,73 @@
 //     здесь код и результат вывожу в console.log
 // });
 // 888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
-
+//
+// const fs = require('fs');
+// const os = require('os');
+// const input = fs.readFileSync('input.txt', 'utf-8').split(os.EOL);
+// process.stdout.write(String(program(input)));
+// function program([n, u]) {
+//    let arr = n.split(' ');
+//    // console.log('arr = ', arr);
+//    let k = +(u);
+//     // console.log('k = ', k);
+//    let result = {};
+//     for (let i = 0; i < arr.length; ++i)
+//     {
+//         let a = arr[i];
+//         if (result[a] != undefined)
+//             ++result[a];
+//         else
+//             result[a] = 1;
+//     }
+//     console.log('result = ', result);
+//     let arrResult = Object.entries(result)
+//     console.log('arrResult = ', arrResult);
+//     console.log('Math.max.apply(null, arrResult) = ', Math.max.apply(null, arrResult));
+//     // let arrResultSort = []
+//     // let returnResult = []
+//     // for (let j = 0; j < arrResult.length; ++j)
+//     // {
+//     //     if (j === 0 ) {
+//     //         arrResultSort.push(arrResult[j])
+//     //     } else {
+//     //         if (arrResult[j][1] > arrResult[j-1][1]) {
+//     //             arrResultSort.unshift(arrResult[j])
+//     //         } else {
+//     //             arrResultSort.push(arrResult[j])
+//     //         }
+//     //     }
+//     // }
+//     // console.log('arrResultSort = ', arrResultSort);
+//     // for (let z = 0; z < k; ++z)
+//     // {
+//     //     returnResult.push(Number(arrResultSort[z][0]))
+//     //     // if (Number(arrResultSort[z][1]) === Number(arrResultSort[z + 1][1]) && (k = 1)) {
+//     //     //     returnResult.push(Number(arrResultSort[z + 1][0]))
+//     //     // }
+//     // }
+//     // console.log('returnResult = ', returnResult);
+//     // return returnResult.join(' ')
+// }
+// 8888888888888888888888888888888888888888888888888888888888888888888888888888888888
 const fs = require('fs');
 const os = require('os');
 const input = fs.readFileSync('input.txt', 'utf-8').split(os.EOL);
-console.log('>>>>>>>\n>>>>>>>\ninput = ', input);
 process.stdout.write(String(program(input)));
 function program([n, u]) {
-   let arr = n.split(' ');
-   console.log('>>>>>>>\n>>>>>>>\narr = ', arr);
-   let k = +(u);
-   console.log('>>>>>>>\n>>>>>>>\nk = ', k);
-   arr.sort((a,b) => {
-       return Number(a)-Number(b)
-   })
-   let result = {};
-    for (let i = 0; i < arr.length; ++i)
-    {
-        let a = +(arr[i]);
+    let arr = n.split(' ');
+    // console.log('arr = ', arr);
+    let k = +(u);
+    // console.log('k = ', k);
+    let result = {};
+    for (let i = 0; i < arr.length; ++i) {
+        let a = arr[i];
         if (result[a] != undefined)
             ++result[a];
         else
             result[a] = 1;
     }
-    // for (var key in result) {
-    //     console.log('число ' + key + ' == ' + result[key] + ' раз(а)');
-    // }
     console.log('result = ', result);
+    let arrResult = Object.entries(result)
+    console.log('arrResult = ', arrResult);
 }
