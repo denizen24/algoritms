@@ -94,9 +94,7 @@ const input = fs.readFileSync('input.txt', 'utf-8').split(os.EOL);
 process.stdout.write(String(program(input)));
 function program([n, u]) {
     let arr = n.split(' ');
-    // console.log('arr = ', arr);
     let k = +(u);
-    // console.log('k = ', k);
     let result = {};
     for (let i = 0; i < arr.length; ++i) {
         let a = arr[i];
@@ -108,4 +106,84 @@ function program([n, u]) {
     console.log('result = ', result);
     let arrResult = Object.entries(result)
     console.log('arrResult = ', arrResult);
+    let arrResultSort = []
+    let returnResult = []
+    for (let j = 0; j < arrResult.length; ++j)
+    {
+        if (j === 0 ) {
+            arrResultSort.push([+(arrResult[j][0]), arrResult[j][1]])
+        } else {
+            if (arrResult[j][1] > arrResult[j-1][1]) {
+                arrResultSort.unshift([+(arrResult[j][0]), arrResult[j][1]])
+            } else {
+                arrResultSort.push([+(arrResult[j][0]), arrResult[j][1]])
+            }
+        }
+    }
+    console.log('arrResultSort = ', arrResultSort);
+    for (let l = 0; l < arrResultSort.length -1; ++l) {
+        if (arrResultSort[l][1] === arrResultSort[l+1][1]) {
+            if (arrResultSort[l][0] > arrResultSort[l+1][0]) {
+                let tempArr = arrResultSort[l]
+                arrResultSort[l] = arrResultSort[l+1]
+                arrResultSort[l+1] = tempArr
+            }
+        }
+    }
+    console.log('after sort arrResultSort = ', arrResultSort);
+    // k === 1 ? ++k : k
+    for (let z = 0; z < k; ++z)
+    {
+        returnResult.push(Number(arrResultSort[z][0]))
+    }
+    console.log('returnResult = ', returnResult);
+    return returnResult.join(' ')
 }
+// 88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+// решение на проверку
+// const fs = require('fs');
+// const os = require('os');
+// const input = fs.readFileSync('input.txt', 'utf-8').split(os.EOL);
+// process.stdout.write(String(program(input)));
+// function program([n, u]) {
+//     let arr = n.split(' ');
+//     let k = +(u);
+//     let result = {};
+//     for (let i = 0; i < arr.length; ++i) {
+//         let a = arr[i];
+//         if (result[a] != undefined)
+//             ++result[a];
+//         else
+//             result[a] = 1;
+//     }
+//     let arrResult = Object.entries(result)
+//     let arrResultSort = []
+//     let returnResult = []
+//     for (let j = 0; j < arrResult.length; ++j)
+//     {
+//         if (j === 0 ) {
+//             arrResultSort.push([+(arrResult[j][0]), arrResult[j][1]])
+//         } else {
+//             if (arrResult[j][1] >= arrResult[j-1][1]) {
+//                 arrResultSort.unshift([+(arrResult[j][0]), arrResult[j][1]])
+//             } else {
+//                 arrResultSort.push([+(arrResult[j][0]), arrResult[j][1]])
+//             }
+//         }
+//     }
+//     for (let l = 0; l < arrResultSort.length -1; ++l) {
+//         if (arrResultSort[l][1] === arrResultSort[l+1][1]) {
+//             if (arrResultSort[l][0] > arrResultSort[l+1][0]) {
+//                 let tempArr = arrResultSort[l]
+//                 arrResultSort[l] = arrResultSort[l+1]
+//                 arrResultSort[l+1] = tempArr
+//             }
+//         }
+//     }
+//     // k === 1 ? ++k : k
+//     for (let z = 0; z < k; ++z)
+//     {
+//         returnResult.push(Number(arrResultSort[z][0]))
+//     }
+//     return returnResult.join(' ')
+// }
